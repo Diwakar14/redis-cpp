@@ -18,7 +18,7 @@ static void do_something(int connfd) {
 
   cout << "Client: " << rbuf << endl;
 
-  char wbuf[] = "world";
+  char wbuf[] = "world is nice place to live and enjoy. how about you???";
   write(connfd, wbuf, strlen(wbuf));
 }
 
@@ -43,6 +43,8 @@ int main() {
   if (rv) {
     std::cout << "could not bind socket address" << endl;
   }
+
+  std::cout << "Port: " << ntohs(1234) << endl;
 
   // start listening to port 1234
   rv = listen(fd, SOMAXCONN);
